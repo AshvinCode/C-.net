@@ -1,0 +1,131 @@
+﻿@model TestCrud.Models.User
+
+@{
+    ViewData["Title"] = "CreateAndUpdate";
+}
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="container">
+        <form asp-action="CreateAndUpdate" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" value="@ViewBag.stateId" id="state_id" />
+            <input type="hidden" value="@ViewBag.countryId" id="country_id" />
+            <input type="hidden" value="@ViewBag.cityId" id="city_id" />
+
+            <div class="form-group mt-3">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" placeholder="Please enter your email" autocomplete="off" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" id="password" class="form-control" placeholder="Please enter your password" value="@ViewBag.password" autocomplete="off" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <div class="form-check mt-2">
+                    <input type="checkbox" class="form-check-input" id="showPassword" onclick="togglePasswordVisibility()">
+                    <label class="form-check-label" for="showPassword">Show Password</label>
+                </div>
+            </div>
+            @*Checkbox code*@
+            <script>
+                function togglePasswordVisibility() {
+                    var passwordField = document.getElementById("password");
+                    if (passwordField.type === "password") {
+                        passwordField.type = "text";
+                    } else {
+                        passwordField.type = "password";
+                    }
+                }
+            </script>
+
+            <div class="form-group mt-3">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" placeholder="Please enter your full name" autocomplete="off" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Gender" class="control-label"></label>
+                <div>
+                    <label>
+                        <input type="radio" asp-for="Gender" value="Male" /> Male
+                    </label>
+                    <label>
+                        <input type="radio" asp-for="Gender" value="Female" /> Female
+                    </label>
+                </div>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="DateOfBirth" class="control-label"></label>
+                <input asp-for="DateOfBirth" class="form-control" placeholder="Please enter your date of birth" autocomplete="off" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Address" class="control-label"></label>
+                <textarea asp-for="Address" class="form-control" rows="3" placeholder="Please enter your address" autocomplete="off"></textarea>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Country" class="control-label"></label>
+                <select asp-for="Country" class="form-control" onchange="func_getStateandCityById(this)">
+                    <option value="">Select Country</option>
+                    @if (ViewBag.Countries != null)
+                    {
+                        @foreach (System.Data.DataRow country in ViewBag.Countries.Tables[0].Rows)
+                        {
+                            <option value="@country["id"]">@country["name"]</option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-3">
+                <label asp-for="State" class="control-label"></label>
+                <select asp-for="State" class="form-control" onchange="func_getStateandCityById(this)">
+                    <option value="">Select State</option>
+
+                </select>
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="City" class="control-label"></label>
+                <select asp-for="City" class="form-control">
+                    <option value="">Select City</option>
+
+                </select>
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label>Hobbies</label>
+                @{
+                    List<string> hobbiesList = ViewBag.hobbiesList ?? new List<string>();
+                }
+
+                <div>
+                    <input type="checkbox" name="Hobbies" value="Reading" @(hobbiesList.Contains("Reading") ? "checked" : "") /> Reading
+                    <input type="checkbox" name="Hobbies" value="Dancing" @(hobbiesList.Contains("Dancing") ? "checked" : "") /> Dancing
+                    <input type="checkbox" name="Hobbies" value="Painting" @(hobbiesList.Contains("Painting") ? "checked" : "") /> Painting
+                    <input type="checkbox" name="Hobbies" value="Surfing" @(hobbiesList.Contains("Surfing") ? "checked" : "") /> Surfing
+                    <input type="checkbox" name="Hobbies" value="Cricket" @(hobbiesList.Contains("Cricket") ? "checked" : "") /> Cricket
+                </div>
+                <span asp-validation-for="Hobbies" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

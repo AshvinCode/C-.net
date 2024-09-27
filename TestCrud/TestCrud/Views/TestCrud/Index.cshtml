@@ -1,0 +1,80 @@
+﻿@model User
+<div class="container">
+
+    @if (!string.IsNullOrWhiteSpace(Convert.ToString(TempData["Success"])))
+    {
+        <div class="alert alert-success mt-3" role="alert">
+            @TempData["Success"]
+        </div>
+    }
+    <div class="row mb-1">
+
+    <h2 class="col-md-10">User Master</h2>
+    <a class="btn btn-primary col-md-1" asp-area="" asp-controller="TestCrud" asp-action="CreateAndUpdate">Create</a>
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                @* <th>Password</th> *@
+                <th>Gender</th>
+                <th>Hobbies</th>
+                <th>Date of Birth</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.Users != null)
+            {
+
+                @foreach (System.Data.DataRow Row in ViewBag.Users.Tables[0].Rows)
+                {
+                    <tr>
+
+                        <td>@Row["full_name"]</td>
+                        <td>@Row["email"]</td>
+                        @* <td>@Row["password"]</td> *@
+                        <td>@Row["gender"]</td>
+                        <td>@Row["hobby"]</td>
+                        <td>
+                            @{
+                                if (Row["date_of_birth"] != null && DateTime.TryParse(Row["date_of_birth"].ToString(), out DateTime dateOfBirth))
+                                {
+                                    @dateOfBirth.ToString("dd/MM/yyyy")
+                                }
+                                else
+                                {
+                                    @String.Empty
+                                }
+                            }
+                        </td>
+                        <td>@Row["address"]</td>
+                        <td>@Row["city"]</td>
+                        <td>@Row["state"]</td>
+                        <td>@Row["country"]</td>
+                        <td>
+                            <a href="TestCrud/CreateAndUpdate/@Row["id"]" class="btn btn-outline-primary">Update</a>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-danger" onclick="func_deleteUser(@Row["id"])">Delete</button>
+                        </td>
+
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+
+                    <td colspan="12">No record found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

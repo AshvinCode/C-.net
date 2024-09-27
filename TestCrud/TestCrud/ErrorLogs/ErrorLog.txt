@@ -1,0 +1,122 @@
+Time: 05/06/2024 02:23:25 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at TestCrud.Controllers.TestCrudController.deleteUser(Nullable`1 id) in C:\Mori\project\TestCrud\TestCrud\Controllers\TestCrudController.cs:line 157
+Source: TestCrud
+TargetSite: Microsoft.AspNetCore.Mvc.IActionResult deleteUser(System.Nullable`1[System.Int32])
+-----------------------------------------------------------
+
+Time: 26/09/2024 02:11:26 AM
+-----------------------------------------------------------
+Message: 42883: function Public.get_user_ref(cursordata => unknown, actiontype => unknown) does not exist
+
+POSITION: 15
+StackTrace:    at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteScalar(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteScalar()
+   at DatabaseConnection.TestCrudDBContext.GetData(String SqlQuery, Int32 timeOut) in C:\Mori\project\TestCrud\TestCrud\DatabaseConnection\TestCrudDBContext.cs:line 35
+Source: Npgsql
+TargetSite: Void MoveNext()
+-----------------------------------------------------------
+
+Time: 26/09/2024 02:12:00 AM
+-----------------------------------------------------------
+Message: 42883: function Public.get_statecitybyid_ref(actiontype => unknown, cursordata => unknown) does not exist
+
+POSITION: 16
+StackTrace:    at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteScalar(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteScalar()
+   at DatabaseConnection.TestCrudDBContext.GetData(String SqlQuery, Int32 timeOut) in C:\Mori\project\TestCrud\TestCrud\DatabaseConnection\TestCrudDBContext.cs:line 35
+Source: Npgsql
+TargetSite: Void MoveNext()
+-----------------------------------------------------------
+
+Time: 26/09/2024 02:12:04 AM
+-----------------------------------------------------------
+Message: 42601: syntax error at or near ")"
+
+POSITION: 89
+StackTrace:    at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteScalar(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteScalar()
+   at DatabaseConnection.TestCrudDBContext.GetData(String SqlQuery, Int32 timeOut) in C:\Mori\project\TestCrud\TestCrud\DatabaseConnection\TestCrudDBContext.cs:line 35
+Source: Npgsql
+TargetSite: Void MoveNext()
+-----------------------------------------------------------
+
+Time: 26/09/2024 02:14:55 AM
+-----------------------------------------------------------
+Message: 42883: function Public.get_user_ref(cursordata => unknown, actiontype => unknown) does not exist
+
+POSITION: 15
+StackTrace:    at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteScalar(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteScalar()
+   at DatabaseConnection.TestCrudDBContext.GetData(String SqlQuery, Int32 timeOut) in C:\Mori\project\TestCrud\TestCrud\DatabaseConnection\TestCrudDBContext.cs:line 35
+Source: Npgsql
+TargetSite: Void MoveNext()
+-----------------------------------------------------------
+
+Time: 26/09/2024 02:15:02 AM
+-----------------------------------------------------------
+Message: 42883: function Public.get_statecitybyid_ref(actiontype => unknown, cursordata => unknown) does not exist
+
+POSITION: 16
+StackTrace:    at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteScalar(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteScalar()
+   at DatabaseConnection.TestCrudDBContext.GetData(String SqlQuery, Int32 timeOut) in C:\Mori\project\TestCrud\TestCrud\DatabaseConnection\TestCrudDBContext.cs:line 35
+Source: Npgsql
+TargetSite: Void MoveNext()
+-----------------------------------------------------------
+
+Time: 26/09/2024 02:15:05 AM
+-----------------------------------------------------------
+Message: 42601: syntax error at or near ")"
+
+POSITION: 89
+StackTrace:    at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteScalar(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteScalar()
+   at DatabaseConnection.TestCrudDBContext.GetData(String SqlQuery, Int32 timeOut) in C:\Mori\project\TestCrud\TestCrud\DatabaseConnection\TestCrudDBContext.cs:line 35
+Source: Npgsql
+TargetSite: Void MoveNext()
+-----------------------------------------------------------
+
